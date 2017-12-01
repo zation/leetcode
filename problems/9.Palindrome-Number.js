@@ -3,6 +3,7 @@ const getNumberByDigit = (number, digit) => Math.floor((
   Math.floor(number / Math.pow(10, digit)) * 10
 ));
 
+// eslint-disable-next-line
 const isPalindrome = (number) => {
   if (number < 0) return false;
   let digits = 0;
@@ -16,6 +17,3 @@ const isPalindrome = (number) => {
   }
   return true;
 };
-
-console.log(isPalindrome(10));
-// console.log(getNumberByDigit(10, 2));
