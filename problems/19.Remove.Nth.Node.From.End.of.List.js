@@ -4,13 +4,12 @@ const removeNthFromEnd = (head, n) => {
   dummy.next = head;
   let first = dummy;
   let second = dummy;
-  let step = 0;
+  for (let i = 0; i < n; i += 1) {
+    first = first.next;
+  }
   while (first.next) {
     first = first.next;
-    step += 1;
-    if (step > n) {
-      second = second.next;
-    }
+    second = second.next;
   }
   second.next = second.next.next;
   return dummy.next;
