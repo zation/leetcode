@@ -1,21 +1,17 @@
 // eslint-disable-next-line
 const removeNthFromEnd = (head, n) => {
-  const list = [head];
-  let cursor = head;
-  while (cursor.next) {
-    list.push(cursor.next);
-    cursor = cursor.next;
+  const dummy = new ListNode(0);
+  dummy.next = head;
+  let first = dummy;
+  let second = dummy;
+  let step = 0;
+  while (first.next) {
+    first = first.next;
+    step += 1;
+    if (step > n) {
+      second = second.next;
+    }
   }
-  if (n > list.length) {
-    return head;
-  }
-  if (n === list.length) {
-    return head.next;
-  }
-  if (n === 1) {
-    list[list.length - 2].next = null;
-    return head;
-  }
-  list[list.length - n - 1].next = list[list.length - n + 1];
-  return head;
+  second.next = second.next.next;
+  return dummy.next;
 };
