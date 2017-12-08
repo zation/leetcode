@@ -33,11 +33,12 @@ const threeSum = (numbers) => {
           0 - sortedFilteredNumbers[i] - sortedFilteredNumbers[j],
         ]);
       }
-      if (sortedFilteredNumbers[j] === sortedFilteredNumbers[j + 1]) {
+      while (sortedFilteredNumbers[j] === sortedFilteredNumbers[j + 1] && j < numbers.length) {
         j += 1;
       }
     }
-    if (sortedFilteredNumbers[i] === sortedFilteredNumbers[i + 1]) {
+    while (sortedFilteredNumbers[i] === sortedFilteredNumbers[i + 1] &&
+    i < sortedFilteredNumbers.length - 1) {
       i += 1;
     }
   }
