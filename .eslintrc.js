@@ -7,6 +7,10 @@ module.exports = {
     'airbnb-base',
   ],
 
+  globals: {
+    ListNode: true,
+  },
+
   rules: {
     'no-mixed-operators': 'off',
     'no-continue': 'off',
