@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 const searchRange = (numbers, target) => {
   let start = 0;
   let end = numbers.length - 1;
@@ -18,5 +19,3 @@ const searchRange = (numbers, target) => {
   }
   return [-1, -1];
 };
-
-console.log(searchRange([1], 1));
