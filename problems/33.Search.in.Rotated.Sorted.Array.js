@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 const search = (numbers, target) => {
   if (target >= numbers[0]) {
     for (let i = 0; i < numbers.length; i += 1) {
