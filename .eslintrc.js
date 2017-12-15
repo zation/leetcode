@@ -16,5 +16,6 @@ module.exports = {
     'no-continue': 'off',
     'no-restricted-properties': 'off',
     'function-paren-newline': 'off',
+    'no-param-reassign': 'off',
   }
 };
