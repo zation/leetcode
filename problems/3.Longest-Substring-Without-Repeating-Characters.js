@@ -1,15 +1,14 @@
-// eslint-disable-next-line
 const lengthOfLongestSubstring = (s) => {
   if (!s) return 0;
-  const map = {};
-  let j = 0;
+  const map = new Map();
+  let start = 0;
   let max = 0;
-  for (let i = 0; i < s.length; i += 1) {
-    if (map[s[i]] >= 0) {
-      j = Math.max(map[s[i]] + 1, j);
+  for (let end = 0; end < s.length; end += 1) {
+    if (map.has(s[end])) {
+      start = Math.max(map.get(s[end]) + 1, start);
     }
-    map[s[i]] = i;
-    max = Math.max(max, (i - j) + 1);
+    map.set(s[end], end);
+    max = Math.max(max, (end - start) + 1);
   }
   return max;
 };
